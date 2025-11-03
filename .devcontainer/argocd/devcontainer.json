@@ -1,7 +1,7 @@
 {
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
-	"name": "github-actions-runner-config",
+	"name": "github-actions-runner-config-argocd",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -37,7 +37,7 @@
             "minikube": "none",
             "version": "latest"
         },
-        "ghcr.io/devcontainers/features/kubectl-kustomize:1": {
+        "ghcr.io/audacioustux/devcontainers/kustomize:1": {
             "kustomize": "latest",
             "version": "latest"
         }
