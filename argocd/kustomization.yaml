@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: argocd
+
+labels:
+  - pairs:
+      app: github-actions-runner
+      managedBy: argocd
+      managementCodeGroup: chrismlee42
+      managementCodeProject: github-actions-runner-config
+
+namespace: github-actions-runner
+
+resources:
+  # https://github.com/actions/actions-runner-controller/releases
+  # - https://github.com/actions/actions-runner-controller/releases/download/gha-runner-scale-set-0.13.1/actions-runner-controller.yaml
+  - github-config-secret.yaml
+  - github-config-chrismlee42-secret.yaml
+  - github-config-morphacy-secret.yaml
+  - github-config-mutinysoftware-secret.yaml
+  # - namespace.yaml
